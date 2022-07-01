@@ -29,7 +29,7 @@ float cuantosKilos(int cantidadPanes , int tipoPan){
 }
 
 
-int cuantosPanes(float kBaston, char tipoPan){
+int cuantosPanes(float kBaston, int tipoPan){
 	
 	int grandes=8;
 	int chicos=12;
@@ -133,42 +133,6 @@ void restoBaston(float kBaston ,int cantidadPanes , int tipoPan){
 	}
 	
 }
-/*
-//UN MENSAJE QUE TIRE LO QUE SOBRA DE MASA EL OPCION 2. LO HAGO ACA PARA NO TOCAR LE CODIGO.
-void masaSobrante(float *Kbaston, char *tipoPan){
-	int grandes=8;
-	int chicos=12;
-	int lomo=6;
-	float sobranteMasa = ;
-	
-}
-
-nt cuantosPanes(float kBaston, int tipoPan){
-	
-	int grandes=8;
-	int chicos=12;
-	int lomo=6;
-	
-	switch(tipoPan){
-		
-		case 'g':
-			return grandes * kBaston;
-			break;
-		case 'c':
-			return chicos * kBaston;
-			break;
-		case 'l':
-			return lomo * kBaston;
-			break;
-		default:
-			printf("-> error...");
-			return 0;
-			break;
-	}
-	
-}
-
-*/
 
 
 

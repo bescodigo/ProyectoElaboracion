@@ -41,7 +41,6 @@ void main() {
 			cantidadPanes = cuantosPanes(kBaston, tipoPan);
 		
 			printf("Peso del Baston : |%.3fg|\nPanes tipo: |%c|\nCantidad de panes: |%iu|\n",kBaston, tipoPan, cantidadPanes);
-			
 			system("pause");
 		
 		}else if(opcion==3){
