@@ -1,6 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-
 
 
 
@@ -133,8 +130,6 @@ void restoBaston(float kBaston ,int cantidadPanes , int tipoPan){
 	}
 	
 }
-
-
 
 
 
