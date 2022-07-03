@@ -55,8 +55,7 @@ void produccion(){
 			kBaston = cuantosKilos(cantidadPanes , tipoPan);
 		
 			printf("Cantidad de panes: |%iu|\nPanes tipo: |%c|\nPeso de masa total: |%.3fg|\n",cantidadPanes, tipoPan,kBaston );
-			system("pause");
-			system("cls");
+			pauseClear();
 		
 		}else if(opcion==2){
 		//	Calcular cantidad de panes por kilos de masa ingresado y tipo.
@@ -67,8 +66,7 @@ void produccion(){
 			cantidadPanes = cuantosPanes(kBaston, tipoPan);
 		
 			printf("Peso del Baston : |%.3fg|\nPanes tipo: |%c|\nCantidad de panes: |%iu|\n",kBaston, tipoPan, cantidadPanes);
-			system("pause");
-			system("cls");
+			pauseClear();
 		}else if(opcion==3){
 			//	Calcular cantidad de panes por kilos de masa sobrante y tipo.
 			
@@ -78,8 +76,7 @@ void produccion(){
 			capturaTipo(&tipoPan);
 			
 			restoBaston(kBaston, cantidadPanes, tipoPan);
-			system("pause");
-			system("cls");
+			pauseClear();
 		}
 		
 		
