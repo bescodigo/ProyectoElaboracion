@@ -2,8 +2,8 @@
 //	BESLIB.
 
 //	Captura y retorna un entero.
-int in_int(){
-	printf("int: ");
+int int_in(){
+	printf("\nint: ");
 	int value;
 	scanf("%i",&value);
 	fflush(stdin);
@@ -12,8 +12,8 @@ int in_int(){
 }
 
 //	Captura y retorna un float.
-int in_float(){
-	printf("float: ");
+int float_in(){
+	printf("\nfloat: ");
 	float value;
 	scanf("%f",&value);
 	fflush(stdin);
@@ -22,8 +22,8 @@ int in_float(){
 }
 
 //	Captura y retorna un char.
-int in_char(){
-	printf("char: ");
+int char_in(){
+	printf("\nchar: ");
 	char value;
 	scanf("%c",&value);
 	fflush(stdin);

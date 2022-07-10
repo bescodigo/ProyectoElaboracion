@@ -1,12 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "beslib.h"
 #include "menus.h"
 #include <time.h>
 #include "calcularCantidades.h"
-#include "capturarDatos.h"
 #include "capturarStock.h"
 #include "stock.h"
+#include "capturarDatos.h"
 
 
 

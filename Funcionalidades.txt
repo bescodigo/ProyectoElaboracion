@@ -9,14 +9,21 @@ donde después pueda ver en tablas o gráficos de alguna índole
 cuánto compra y cada cuanto.
 
 1 [OK]> Que sepa cuánto producto me sale con el stock de materia prima;
-2 [>] Que sepa cuánta mercadería tengo;
+2 [OK]> Que sepa cuánta mercadería tengo;
 3 [>] Que me recuerde que me falta para comprar;
 4 [>] Que me diga que tengo que hacer según haya programado previamente;
 5 [>] Que vaya registrando el consumo de cada cliente con gráficos estadísticas y eso.
 
-La masa de panes. 
+La masa de panes:
 Harina 1 kg
 Margarina 100 grs
 Azúcar 100gr
 Levadura 70 grs 
 Sal 30 grs.
+
+Stock Minimo:
+Harina (25K).
+Azúcar (5K).
+Margarina (2.5K).
+Sal (1K).
+Levadura(0.5k).

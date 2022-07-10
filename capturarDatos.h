@@ -8,7 +8,7 @@
 void capturaCantidadPan(int *cantidadPanes){
 	
 		printf("Ingrese cantidad de panes.\n");
-		*cantidadPanes = in_int();
+		*cantidadPanes = int_in();
 		printf("--------------------------------------------\n");
 	
 }
@@ -16,14 +16,14 @@ void capturaCantidadPan(int *cantidadPanes){
 void capturaTipo(char *tipoPan){
 
 	printf("Ingrese tipo de pan \n'g'(Burguer Grande)\n'c'(Chico)\n'l'(Lomo).\n");
-	*tipoPan = in_char();
+	*tipoPan = char_in();
 	printf("--------------------------------------------\n");
 
 }
 
 void capturaPeso(float *peso){
 	printf("Ingrese peso del Baston.\n");
-	*peso = in_float();
+	*peso = float_in();
 	printf("--------------------------------------------\n");
 }
 
@@ -68,9 +68,14 @@ void produccion(){
 			printf("Peso del Baston : |%.3fg|\nPanes tipo: |%c|\nCantidad de panes: |%iu|\n",kBaston, tipoPan, cantidadPanes);
 			pauseClear();
 		}else if(opcion==3){
+			//	Produccion (restar de stock) y
 			//	Calcular cantidad de panes por kilos de masa sobrante y tipo.
 			
 			capturaPeso(&kBaston);
+			
+			printf("\nRestar de Stock? s/n");
+			char op = char_in();
+			(op=='s')?restarStock(&kBaston):printf("NO se resto del stock.");
 			
 			capturaCantidadPan(&cantidadPanes);
 			capturaTipo(&tipoPan);

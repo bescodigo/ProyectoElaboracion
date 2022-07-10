@@ -5,7 +5,7 @@ void capturaHarina(float *Harina, float * vStock, int indiceH){
 	
 	printf("Ingrese cantidad de harina: \n");
 	
-	*Harina = in_float();
+	*Harina = float_in();
 	printf("Harina ingresada: %.0f\n",*Harina);
 	
 	*(vStock+indiceH)  = *Harina;
@@ -21,7 +21,7 @@ void capturaMargarina(float *Margarina, float * vStock, int indiceM){
 	
 	printf("Ingrese cantidad de harina: \n");
 	
-	*Margarina = in_float();
+	*Margarina = float_in();
 	printf("Margarina ingresada: %.0f\n",*Margarina);
 	
 	*(vStock+indiceM)  = *Margarina;
@@ -37,7 +37,7 @@ void capturaAzucar(float *Azucar, float * vStock, int indiceA){
 	
 	printf("Ingrese cantidad de harina: \n");
 	
-	*Azucar = in_float();
+	*Azucar = float_in();
 	printf("Azucar ingresada: %.0f\n",*Azucar);
 	
 	*(vStock+indiceA)  = *Azucar;
@@ -53,7 +53,7 @@ void capturaLevadura(float *Levadura, float * vStock, int indiceL){
 	
 	printf("Ingrese cantidad de harina: \n");
 	
-	*Levadura = in_float();
+	*Levadura = float_in();
 	printf("Levadura ingresada: %.0f\n",*Levadura);
 	
 	*(vStock+indiceL)  = *Levadura;
@@ -70,7 +70,7 @@ void capturaSal(float *Sal, float * vStock, int indiceS){
 	
 	printf("Ingrese cantidad de harina: \n");
 	
-	*Sal = in_float();
+	*Sal = float_in();
 	printf("Sal ingresada: %.0f\n",*Sal);
 	
 	*(vStock+indiceS)  = *Sal;
@@ -95,7 +95,7 @@ void guardaStock(float *vStock){
 	char fechaHora[70];  
 	
 	// El formato. Mira más en https://en.cppreference.com/w/c/chrono/strftime
-	char *formato = "stock_%Y-%m-%d";
+	char *formato = "%Y-%m-%d,";
 	
 	// Intentar formatear
 	int bytesEscritos = strftime(fechaHora, sizeof fechaHora, formato, &tiempoLocal);
@@ -107,17 +107,26 @@ void guardaStock(float *vStock){
 	  	printf("Error formateando fecha");
 	}
 	
-	
+	char stock[50]={};
 	FILE *fptr=NULL;
+	int longitud=0;
 	
-	fptr= fopen("STOCK.txt","w");
+	fptr= fopen("STOCK.txt","r+");
+	fseek(fptr, 0, SEEK_END); 
+	longitud=ftell(fptr);
+	fseek(fptr, 0,SEEK_SET);
+	fgets(stock, (longitud+10),fptr);
+	printf("valor de stock: %s",stock);
+	
+	fseek(fptr, 0,SEEK_SET);
 	
 	if(fptr!=NULL){
-		fprintf(fptr,"%s\n", fechaHora);	
+	
 		int i;
 		for(i=0;i<=4;i++){
-			fprintf(fptr,"%.0f\n", *(vStock+i));	
+			fprintf(fptr,"%f,", *(vStock+i));	
 		}
+		fprintf(fptr,"%s%s", fechaHora,stock);	
 		printf("\nExito al guardar.\n");
 		pauseClear();
 	}else{
